@@ -1,0 +1,20 @@
+.accordion {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+summary {
+  cursor: pointer;
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+details > div {
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+details[open] > div {
+  padding: 10px;
+}
