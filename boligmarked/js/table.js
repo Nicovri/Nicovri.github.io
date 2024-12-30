@@ -7,10 +7,15 @@ export function renderTable() {
 
   // Create table header
   html += "<thead><tr>";
-  html += "<th>Region</th>";
-  Object.keys(state.data[0]).forEach((key) => {
+  Object.keys(state.data[0]).forEach((key, index) => {
+    let sortClass = "";
+    if (state.params.sort.index === index) {
+      sortClass = state.params.sort.order === "asc" ? "sort-asc" : "sort-desc";
+    }
     if (key !== "region") {
-      html += `<th>${state.data[0][key].label}</th>`;
+      html += `<th class="${sortClass}">${state.data[0][key].label}</th>`;
+    } else {
+      html += `<th class="${sortClass}">Region</th>`;
     }
   });
   html += "</tr></thead>";
@@ -44,8 +49,10 @@ function sortData(data, columnIndex, isAscending) {
   const direction = isAscending ? -1 : 1;
 
   const sortedData = [...data].sort((a, b) => {
-    const aValue = Object.values(a)[columnIndex].value;
-    const bValue = Object.values(b)[columnIndex].value;
+    const aValue =
+      columnIndex === 0 ? a.region : Object.values(a)[columnIndex].value;
+    const bValue =
+      columnIndex === 0 ? b.region : Object.values(b)[columnIndex].value;
 
     if (typeof aValue === "number" && typeof bValue === "number") {
       return (aValue - bValue) * direction;
@@ -63,7 +70,8 @@ function sortTableAndGraph(columnIndex, header) {
   const state = getState();
 
   const isAscending =
-    state.sort.index === columnIndex && state.sort.order === "asc";
+    state.params.sort.index === columnIndex &&
+    state.params.sort.order === "asc";
   const newOrder = isAscending ? "desc" : "asc";
 
   // Remove sorting classes from all headers
@@ -76,5 +84,8 @@ function sortTableAndGraph(columnIndex, header) {
 
   const sortedData = sortData(state.data, columnIndex, !isAscending);
 
-  setState({ data: sortedData, sort: { index: columnIndex, order: newOrder } });
+  setState({
+    data: sortedData,
+    params: { ...state.params, sort: { index: columnIndex, order: newOrder } },
+  });
 }

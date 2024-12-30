@@ -1,0 +1,85 @@
+.comparison {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 48%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.card p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #666;
+}
+
+.card p strong {
+  color: #333;
+}
+
+#comparisonChoice {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#citySelect1,
+#citySelect2 {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+#citySelect1:focus,
+#citySelect2:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+#compareCities,
+#resetComparison {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#compareCities:hover,
+#resetComparison:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+#compareCities:active,
+#resetComparison:active {
+  background-color: #388e3c;
+  transform: translateY(0);
+}

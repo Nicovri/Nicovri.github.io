@@ -12,16 +12,17 @@ export function renderAccordion() {
     summary.textContent = item.region;
 
     const div = document.createElement("div");
-    div.innerHTML = `
-        <p>Endring siste måned: ${item.endring_siste_maaned.value} %</p>
-        <p>Endring sesongjustert siste måned: ${item.endring_sesongjustert_siste_maaned.value} %</p>
-        <p>Endring hittil i år: ${item.endring_hittil_i_aar.value} %</p>
-        <p>Endring siste år: ${item.endring_siste_aar.value} %</p>
-        <p>Endring siste 5 år: ${item.endring_siste_5_aar.value} %</p>
-        <p>Endring siste 10 år: ${item.endring_siste_10_aar.value} %</p>
-        <p>Gjennomsnitt kvm. pris: ${item.gjennomsnitt_kvm_pris.value} kr</p>
-        <p>Gjennomsnittspris: ${item.gjennomsnitt_pris.value} kr</p>
-        `;
+
+    Object.keys(item).forEach((key) => {
+      if (key !== "region") {
+        const p = document.createElement("p");
+        p.innerHTML = `<strong>${key.replace(/_/g, " ")}:</strong> ${
+          item[key].value
+        } ${key.includes("pris") ? "kr" : "%"}`;
+        div.appendChild(p);
+      }
+    });
+
     details.appendChild(summary);
     details.appendChild(div);
     accordion.appendChild(details);

@@ -6,12 +6,16 @@ export function renderGraph() {
   const canvas = document.getElementById("myChart");
   const ctx = canvas.getContext("2d");
 
+  const defaultKey = "endring_siste_aar";
+  const selectedKey = state.params.filteredCol || defaultKey;
+
   const chartData = {
     labels: state.data.map((item) => item.region),
     datasets: [
       {
-        label: "Endring siste år",
-        data: state.data.map((item) => item.endring_siste_aar.value),
+        label:
+          state.data.length > 0 ? state.data[0][selectedKey].label : "Data",
+        data: state.data.map((item) => item[selectedKey].value),
         backgroundColor: state.data.map((item) =>
           item.region === "Norge"
             ? "rgba(255, 99, 132, 0.2)"
@@ -39,7 +43,7 @@ export function renderGraph() {
 
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    const title = "Endring siste år";
+    const title = datasets[0].label;
     ctx.fillStyle = "#000";
     ctx.textAlign = "center";
     ctx.textBaseline = "top";

@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/graph.css" />
     <link rel="stylesheet" href="css/accordion.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/comparison.css" />
   </head>
   <body>
-    <div id="container">
-      <h1>Boligprisstatistikk</h1>
-      <div id="content"></div>
-      <canvas id="myChart" width="1000" height="375"></canvas>
-    </div>
+    <h1>Boligprisstatistikk</h1>
+    <div id="content"></div>
+    <canvas id="myChart" width="1000" height="375"></canvas>
+    <div class="timeline-container"><div class="timeline"></div></div>
+    <div id="comparisonChoice"></div>
+    <div class="comparison" id="comparisonContainer"></div>
     <div id="accordion"></div>
+
+    <!-- <object type="image/svg+xml" data="norway.svg" class="map"></object> -->
+
     <script type="module" src="js/table.js"></script>
     <script type="module" src="js/graph.js"></script>
     <script type="module" src="js/accordion.js"></script>
+    <script type="module" src="js/timeline.js"></script>
+    <script type="module" src="js/comparison.js"></script>
     <script type="module" src="js/index.js"></script>
   </body>
 </html>
