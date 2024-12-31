@@ -3,6 +3,7 @@ import { renderGraph } from "./graph.js";
 import { renderAccordion } from "./accordion.js";
 import { renderTimeline } from "./timeline.js";
 import { renderComparison } from "./comparison.js";
+import { renderMap } from "./map.js";
 
 let state = {};
 resetState();
@@ -95,6 +96,7 @@ function renderAll() {
   renderAccordion();
   renderTimeline();
   renderComparison();
+  renderMap();
 }
 
 export function filterByCol() {

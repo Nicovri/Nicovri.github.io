@@ -14,19 +14,19 @@ export function renderComparison() {
   citySelect2.id = "citySelect2";
   const compareButton = document.createElement("button");
   compareButton.id = "compareCities";
-  compareButton.textContent = "Compare";
+  compareButton.textContent = "Sammenligne";
   const resetButton = document.createElement("button");
   resetButton.id = "resetComparison";
-  resetButton.textContent = "Reset";
+  resetButton.textContent = "Tilbakestille";
 
   const defaultOption1 = document.createElement("option");
   defaultOption1.value = "";
-  defaultOption1.textContent = "Select Region 1";
+  defaultOption1.textContent = "1. Region";
   citySelect1.appendChild(defaultOption1);
 
   const defaultOption2 = document.createElement("option");
   defaultOption2.value = "";
-  defaultOption2.textContent = "Select Region 2";
+  defaultOption2.textContent = "2. Region";
   citySelect2.appendChild(defaultOption2);
 
   state.data.forEach((item) => {

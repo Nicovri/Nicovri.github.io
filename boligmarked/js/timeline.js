@@ -35,9 +35,9 @@ export function renderTimeline() {
 
       let eventContent = `<h4>${period.label}</h4>`;
       state.data.forEach((item) => {
-        eventContent += `<p><strong>${item.region}:</strong> ${
-          item[period.key].value
-        } %</p>`;
+        eventContent += `<p><strong class="${
+          item.region === "Norge" ? "event-norge" : ""
+        }">${item.region}:</strong> ${item[period.key].value} %</p>`;
       });
 
       event.innerHTML = eventContent;

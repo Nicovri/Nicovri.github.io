@@ -1,20 +1,35 @@
-.accordion {
-  margin: 20px 0;
+#accordion {
+  margin: 20px auto;
+  padding: 0;
   border: 1px solid #ddd;
   border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 summary {
   cursor: pointer;
-  background: #f4f4f4;
+  background: #4caf50;
+  color: white;
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+
+details:first-child summary {
+  border-radius: 5px 5px 0 0;
+}
+
+details:last-child summary {
+  border-radius: 0 0 5px 5px;
+}
+
 details > div {
   padding: 0 10px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
+
 details[open] > div {
   padding: 10px;
 }

@@ -19,12 +19,12 @@ export function renderGraph() {
         backgroundColor: state.data.map((item) =>
           item.region === "Norge"
             ? "rgba(255, 99, 132, 0.2)"
-            : "rgba(75, 192, 192, 0.2)"
+            : "rgb(76, 175, 80, 0.2)"
         ),
         borderColor: state.data.map((item) =>
           item.region === "Norge"
             ? "rgba(255, 99, 132, 1)"
-            : "rgba(75, 192, 192, 1)"
+            : "rgb(76, 175, 80, 1)"
         ),
         borderWidth: 1,
       },

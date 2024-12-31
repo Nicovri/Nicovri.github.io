@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="css/accordion.css" />
     <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/comparison.css" />
+    <link rel="stylesheet" href="css/map.css" />
   </head>
   <body>
     <h1>Boligprisstatistikk</h1>
-    <div id="content"></div>
-    <canvas id="myChart" width="1000" height="375"></canvas>
-    <div class="timeline-container"><div class="timeline"></div></div>
-    <div id="comparisonChoice"></div>
-    <div class="comparison" id="comparisonContainer"></div>
-    <div id="accordion"></div>
-
-    <!-- <object type="image/svg+xml" data="norway.svg" class="map"></object> -->
+    <div class="container" id="content"></div>
+    <canvas class="container" id="myChart" width="1000" height="375"></canvas>
+    <div class="container timeline-container"><div class="timeline"></div></div>
+    <div class="container">
+      <div id="comparisonChoice"></div>
+      <div class="comparison" id="comparisonContainer"></div>
+    </div>
+    <div class="container map-container"></div>
+    <div class="container" id="accordion"></div>
 
     <script type="module" src="js/table.js"></script>
     <script type="module" src="js/graph.js"></script>
@@ -28,5 +30,6 @@
     <script type="module" src="js/timeline.js"></script>
     <script type="module" src="js/comparison.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/map.js"></script>
   </body>
 </html>

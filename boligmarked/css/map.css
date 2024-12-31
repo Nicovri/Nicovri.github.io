@@ -1,0 +1,27 @@
+.map-container {
+  text-align: center;
+  border: solid 1px #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.region {
+  fill: #ff6384;
+  stroke: #783846;
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.region:hover,
+.region-selected {
+  fill: #4caf50;
+  stroke: #285329;
+}
+
+.region-disabled {
+  fill: #ccc;
+  stroke: #999;
+}

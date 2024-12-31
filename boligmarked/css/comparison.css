@@ -59,27 +59,3 @@
   border-color: #4caf50;
   outline: none;
 }
-
-#compareCities,
-#resetComparison {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: #fff;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#compareCities:hover,
-#resetComparison:hover {
-  background-color: #45a049;
-  transform: translateY(-2px);
-}
-
-#compareCities:active,
-#resetComparison:active {
-  background-color: #388e3c;
-  transform: translateY(0);
-}
