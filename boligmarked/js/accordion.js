@@ -16,7 +16,7 @@ export function renderAccordion() {
     Object.keys(item).forEach((key) => {
       if (key !== "region") {
         const p = document.createElement("p");
-        p.innerHTML = `<strong>${key.replace(/_/g, " ")}:</strong> ${
+        p.innerHTML = `<strong>${item[key].label}:</strong> ${
           item[key].value
         } ${key.includes("pris") ? "kr" : "%"}`;
         div.appendChild(p);
